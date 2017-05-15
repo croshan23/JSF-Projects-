@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Student Two Form</title>
+	<style>
+		.error{color:red}
+	</style>
+</h:head>
+<h:body>
+	<h:form>
+		First Name: <h:inputText value="#{studentTwo.firstName}" label="first name"/>
+		<br/><br/>
+		Last Name: <h:inputText value="#{studentTwo.lastName}" label="first name"/>
+		<br/><br/>	
+		Free Passes: 
+		<h:inputText id="freepasses" value="#{studentTwo.freePasses}" label="free passes">
+				<f:validateLongRange minimum="0" maximum="10" />
+		</h:inputText>
+		<h:message for="freepasses" styleClass="error" />
+		<br/><br/>					
+		Postal Code: 
+		<h:inputText id="postalcode" value="#{studentTwo.postalCode}" label="postal code">
+				<f:validateLength minimum="5" maximum="5" />
+		</h:inputText>	
+		<h:message for="postalcode" styleClass="error" />
+		<br/><br/>	
+		<h:commandButton value="submit" action="student-two-response" />
+	</h:form>
+</h:body>
+</html>
